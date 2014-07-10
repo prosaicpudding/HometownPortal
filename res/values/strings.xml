@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Panama City Portal</string>
+    <string name="title_activity_restaurant">RestaurantActivity</string>
+    <string name="title_activity_map">MapActivity</string>
+    <string name="title_activity_place_detail">PlaceDetail</string>
+    <string name="title_activity_news">NewsActivity</string>
+    <string name="title_activity_employment">EmploymentActivity</string>
+    <string name="title_activity_feed">FeedActivity</string>
+    <string name="custom_title_text">Welcome to Panama City</string>
+    <string name="custom_title_desc">Panama City</string>
+    <string name="food_text">Food</string>
+    <string name="entertainment_text">Entertainment</string>
+    <string name="shopping_text">Shopping</string>
+    <string name="schools_text">Schools</string>
+    <string name="news_text">News</string>
+    <string name="empl_text">Employment</string>
+    <string name="loading_text">Loading&#8230;</string>
+    <string name="returnText">Press Back to Return</string>
+    <string name="newsCourtesy">News courtesy of The News Herald</string>
+    <string name="emplCourtesy">Jobs courtesy of Monster</string>
+    <string name="newsSource">http://m.newsherald.com/</string>
+    <string name="newsViewMore">http://m.newsherald.com</string>
+    <string name="topNews">Top%20News</string>
+    <string name="jobsRss">http://rss.jobsearch.monster.com/rssquery.ashx?where=Panama+City%2C+FL</string>
+    <string name="jobsViewMore">http://m.monster.com/JobSearch/Search?jobtitle=&amp;keywords=&amp;where=Panama+City%2C+FL</string>
+    <string name="placePhoto">Place Photo</string>
+    <string name="locations_prompt">Select Location</string>
+
+    <string-array name="locations">
+        <item>My Location</item>
+        <item>Panama City</item>
+    </string-array>
+
+</resources>
