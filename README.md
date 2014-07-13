@@ -1,6 +1,8 @@
 HometownPortal
 ==============
 
+Added a weather tab - Maria
+
 Helen is currently working on finding and fixing the services not closing bug.
 Files in use: all? I don't know where it is. If you need to work on something, message me.
 
