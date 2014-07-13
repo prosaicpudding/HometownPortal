@@ -1,6 +1,10 @@
 HometownPortal
 ==============
 
+Helen is currently working on finding and fixing the services not closing bug.
+Files in use: all? I don't know where it is. If you need to work on something, message me.
+
+
 Ideas on how to split up components:
 
 1. Main activity + Misc things (splash screen, etc.)
