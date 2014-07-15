@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"   
+    android:layout_marginTop="15dp"
+    >
+    
+    <ImageView android:id="@+id/dayIcon"
+              android:layout_width="@dimen/weatherMainIcon.width"
+              android:layout_height="@dimen/weatherMainIcon.height"
+              android:paddingLeft="5dp"
+              android:contentDescription="@string/weatherIcon"
+    		  />
+   
+<LinearLayout
+    android:id="@+id/layout"
+     android:layout_height="wrap_content"
+        android:layout_width="wrap_content" 
+         android:orientation="vertical"
+         android:gravity="center"
+         android:layout_centerInParent="true">
+         
+    <LinearLayout
+     android:layout_height="wrap_content"
+        android:layout_width="wrap_content" 
+         android:orientation="horizontal">
+        
+      <TextView android:id="@+id/dayName"
+    		  android:layout_height="wrap_content"
+              android:layout_width="wrap_content"
+              android:textSize="15sp"
+              android:textColor="@color/black"
+    		  />
+    <TextView android:id="@+id/dayDate"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"   
+        android:textSize="15sp"
+        android:textColor="@color/black"
+           />
+ </LinearLayout>
+     
+     <TextView android:id="@+id/dayDescr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:paddingLeft="5dp"
+       android:textColor="@color/gray"
+    />
+     
+</LinearLayout>
+    
+<LinearLayout
+    android:layout_width="wrap_content"
+   	android:layout_height="wrap_content"
+   android:orientation="vertical"
+   android:layout_alignParentRight="true"
+    >
+     <TextView android:id="@+id/dayTempMin"
+              android:layout_width="wrap_content"
+    		  android:layout_height="wrap_content"
+              android:textColor="@color/darkBlue"
+                />
+     
+    <TextView android:id="@+id/dayTempMax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:textColor="@color/red"   
+    />
+     </LinearLayout>
+</RelativeLayout>

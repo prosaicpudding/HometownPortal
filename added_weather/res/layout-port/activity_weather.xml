@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/weather"
+    android:orientation="vertical" >
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:entries="@array/locations"
+        android:prompt="@string/locations_prompt" />
+
+    <TextView
+        android:id="@+id/location"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white" />
+
+    <RelativeLayout
+        android:id="@+id/tempLyt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:gravity="center"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp" >
+
+        <TextView
+            android:id="@+id/tempBig"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="60sp" />
+
+        <ImageView
+            android:id="@+id/imgWeather"
+            android:layout_width="@dimen/weatherMainIcon.width"
+            android:layout_height="@dimen/weatherMainIcon.height"
+            android:layout_alignTop="@id/tempBig"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/tempBig"
+            android:background="@drawable/circle"
+            android:contentDescription="@string/weatherIcon"
+            android:padding="4dp" />
+
+        <TextView
+            android:id="@+id/tempUnit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/imgWeather"
+            android:layout_below="@+id/descrWeather"
+            android:layout_toRightOf="@id/tempBig"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/descrWeather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/tempUnit"
+            android:layout_below="@id/imgWeather"
+            android:layout_toRightOf="@id/tempBig"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tempMin"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/darkBlue"
+                android:textSize="@dimen/textTemp" />
+
+            <TextView
+                android:id="@+id/tempMax"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingLeft="20dp"
+                android:textColor="@color/red"
+                android:textSize="@dimen/textTemp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            tools:ignore="NestedWeights" >
+
+            <TextView
+                android:id="@+id/humidityIcon"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/humidity"
+                android:textColor="@color/white"
+                tools:ignore="NestedWeights" />
+
+            <TextView
+                android:id="@+id/humidity"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/cloudIcon"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/clouds"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/cloud"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/sunIcon"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/sunrise"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/sunrise"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/moonIcon"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/sunset"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/sunset"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/pressureIcon"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/pressure"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/pressure"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/windIcon"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/wind"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/windSpeed"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/forecastDays"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingTop="20dp" />
+
+</LinearLayout>
