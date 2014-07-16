@@ -14,12 +14,15 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
     <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+  	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher_pc"
         android:label="@string/app_name"
         android:theme="@style/customTheme" >
+        <meta-data android:name="com.google.android.gms.version"
+               android:value="@integer/google_play_services_version"/>
         <activity
             android:name="com.android.projecte.townportal.SplashActivity"
             android:label="@string/app_name"
@@ -65,7 +68,12 @@
         </activity>
         <activity 
            android:name="com.android.projecte.townportal.WeatherActivity"
-            android:label="@string/title_activity_weather" ></activity>
+            android:label="@string/title_activity_weather" >
+        </activity>
+        <activity
+   			android:name="com.google.android.gms.ads.AdActivity"
+   			android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" >
+   		</activity>
     </application>
 
 </manifest>
