@@ -11,5 +11,5 @@ Added ad support, still in a seperate branch, for now. -Helen
 Added a weather tab - Maria
 
 
-**Add features to the readme as you begin working on it, to avoid overlaps.**
+**Add features to the readme as you begin working on them, to avoid overlaps.**
 
