@@ -160,6 +160,26 @@
         android:gravity="center"
         android:orientation="horizontal"
         android:baselineAligned="false" >
+        
+         <LinearLayout android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ImageButton android:id="@+id/btnTransportation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/transportation"
+                android:contentDescription="@string/transportation_text"
+                android:onClick="onClick" />
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/transportation_text"
+                android:textSize="12sp" />
+            
+        </LinearLayout>
 
         <LinearLayout android:layout_width="0dp"
             android:layout_height="wrap_content"

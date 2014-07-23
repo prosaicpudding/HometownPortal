@@ -5,10 +5,16 @@
 package com.android.projecte.townportal;
 
 import java.util.Vector;
+
 import com.google.android.gms.ads.*;
+
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 
@@ -23,9 +29,10 @@ public class MainActivity extends Activity {
     private Vector<PlaceType> vFood = new Vector<PlaceType>(),
                               vEnt = new Vector<PlaceType>(),
                               vShop = new Vector<PlaceType>(),
-                              vSchool = new Vector<PlaceType>();
+                              vSchool = new Vector<PlaceType>(),
+                              vTransit = new Vector<PlaceType>();
     
-    private String foodTitle, entertainmentTitle, shoppingTitle, schoolsTitle;
+    private String foodTitle, entertainmentTitle, shoppingTitle, schoolsTitle, transportationTitle;
     AdView adView;
     
     @Override
@@ -43,6 +50,7 @@ public class MainActivity extends Activity {
         this.entertainmentTitle = getString( R.string.entertainment_text );
         this.shoppingTitle = getString( R.string.shopping_text );
         this.schoolsTitle = getString( R.string.schools_text );
+        this.transportationTitle = getString( R.string.transportation_text );
 
         // Setup food
         this.vFood.add( new PlaceType( "cafe", "Cafes" ) );
@@ -62,6 +70,12 @@ public class MainActivity extends Activity {
         // Setup Schools
         this.vSchool.add( new PlaceType( "school", "Schools" ) );
         this.vSchool.add( new PlaceType( "university", "Universities" ) );
+        
+        // Setup Transportation
+        this.vTransit.add( new PlaceType( "taxi_stand", "Taxi" ) );
+        this.vTransit.add( new PlaceType( "car_rental", "Car Rental" ) );
+        this.vTransit.add( new PlaceType( "airport", "Air" ) );
+        
         
         //***
         //---https://developers.google.com/mobile-ads-sdk/docs/admob/fundamentals
@@ -108,6 +122,13 @@ public class MainActivity extends Activity {
         case R.id.btnSchools: {
             
             openPlaceList( this.schoolsTitle, this.vSchool );
+            
+            break; 
+        }
+        
+        case R.id.btnTransportation: {
+            
+            openPlaceList( this.transportationTitle, this.vTransit );
             
             break; 
         }
@@ -180,4 +201,22 @@ public class MainActivity extends Activity {
       super.onDestroy();
     }
     //***
+    
+    @Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		new MenuInflater(this).inflate(R.menu.option, menu);
+		return (super.onCreateOptionsMenu(menu));
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case R.id.pcsite:
+			String url = "http://www.pcgov.org/home";
+			Intent i = new Intent(Intent.ACTION_VIEW);
+			i.setData(Uri.parse(url));
+			startActivity(i);
+		}
+		return (super.onOptionsItemSelected(item));
+	}
 }
