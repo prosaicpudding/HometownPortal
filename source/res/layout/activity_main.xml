@@ -190,7 +190,7 @@
             <ImageButton android:id="@+id/btnWeather"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/ic_launcher_pc"
+                android:background="@drawable/weather"
                 android:contentDescription="@string/weather_text"
                 android:onClick="onClick" />
 
