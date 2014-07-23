@@ -8,6 +8,7 @@
     <string name="title_activity_news">NewsActivity</string>
     <string name="title_activity_employment">EmploymentActivity</string>
     <string name="title_activity_feed">FeedActivity</string>
+    <string name="title_activity_weather">Weather</string>
     <string name="custom_title_text">Welcome to Panama City</string>
     <string name="custom_title_desc">Panama City</string>
     <string name="food_text">Food</string>
@@ -16,6 +17,7 @@
     <string name="schools_text">Schools</string>
     <string name="news_text">News</string>
     <string name="empl_text">Employment</string>
+    <string name="weather_text">Weather</string>
     <string name="loading_text">Loading&#8230;</string>
     <string name="returnText">Press Back to Return</string>
     <string name="newsCourtesy">News courtesy of The News Herald</string>
@@ -27,6 +29,20 @@
     <string name="jobsViewMore">http://m.monster.com/JobSearch/Search?jobtitle=&amp;keywords=&amp;where=Panama+City%2C+FL</string>
     <string name="placePhoto">Place Photo</string>
     <string name="locations_prompt">Select Location</string>
+    <string name="rain">----</string>
+    <string name="wind">Wind:</string>
+    <string name="humidity">Humidity:</string>
+    <string name="sunrise">Sunrise:</string>
+    <string name="sunset">Sunset:</string>
+    <string name="pressure">Pressure</string>
+    <string name="clouds">Clouds:</string>
+    <string name="weatherIcon">Weather Icon</string>
+    <string name="job_search_title">Job Search</string>
+    <string name="search">Search</string>
+    <string name="cancel">Cancel</string>
+    <string name="location">City, State or Zip</string>
+    <string name="jobTitle">Job Title</string>
+    <string name="keyword">Keyword eg. sales, nurse</string>
 
     <string-array name="locations">
         <item>My Location</item>

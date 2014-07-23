@@ -5,7 +5,7 @@
 package com.android.projecte.townportal;
 
 import java.util.Vector;
-
+import com.google.android.gms.ads.*;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,7 +26,8 @@ public class MainActivity extends Activity {
                               vSchool = new Vector<PlaceType>();
     
     private String foodTitle, entertainmentTitle, shoppingTitle, schoolsTitle;
-
+    AdView adView;
+    
     @Override
     protected void onCreate( Bundle savedInstanceState ) {
 
@@ -61,6 +62,17 @@ public class MainActivity extends Activity {
         // Setup Schools
         this.vSchool.add( new PlaceType( "school", "Schools" ) );
         this.vSchool.add( new PlaceType( "university", "Universities" ) );
+        
+        //***
+        //---https://developers.google.com/mobile-ads-sdk/docs/admob/fundamentals
+        adView = (AdView) this.findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder()
+            .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+            .build();
+        //Note: this presently produces an error because we have no ad unit ID
+        //this can easily be registered for (from google) and added
+        adView.loadAd(adRequest);
+        //***
     }
 
     /*
@@ -115,6 +127,11 @@ public class MainActivity extends Activity {
             
             break;
         }
+        case R.id.btnWeather:{
+        	
+        	Intent weatherIntent = new Intent(this, WeatherActivity.class);
+        	startActivity(weatherIntent);
+        }
         
         default:
             break;
@@ -135,4 +152,32 @@ public class MainActivity extends Activity {
         
         startActivity( intent );
     }
+    
+  //***
+    //---https://developers.google.com/mobile-ads-sdk/docs/admob/fundamentals
+    @Override
+    public void onResume() {
+      super.onResume();
+      if (adView != null) {
+        adView.resume();
+      }
+    }
+
+    @Override
+    public void onPause() {
+      if (adView != null) {
+        adView.pause();
+      }
+      super.onPause();
+    }
+
+    @Override
+    public void onDestroy() {
+      // Destroy the AdView.
+      if (adView != null) {
+        adView.destroy();
+      }
+      super.onDestroy();
+    }
+    //***
 }
