@@ -37,6 +37,12 @@
     <string name="pressure">Pressure</string>
     <string name="clouds">Clouds:</string>
     <string name="weatherIcon">Weather Icon</string>
+    <string name="job_search_title">Job Search</string>
+    <string name="search">Search</string>
+    <string name="cancel">Cancel</string>
+    <string name="location">City, State or Zip</string>
+    <string name="jobTitle">Job Title</string>
+    <string name="keyword">Keyword eg. sales, nurse</string>
 
     <string-array name="locations">
         <item>My Location</item>

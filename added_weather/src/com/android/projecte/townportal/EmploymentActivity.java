@@ -23,8 +23,15 @@ import org.jsoup.parser.Parser;
 import org.jsoup.select.Elements;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /*
  * Employment Activity
@@ -33,6 +40,8 @@ import android.widget.TextView;
 final public class EmploymentActivity extends FeedActivity {
     
     private String jobsSource;
+    private EditText job, keyword, location; 
+    private AlertDialog dialog;
     
     @SuppressLint("SetJavaScriptEnabled")
     @Override
@@ -40,22 +49,108 @@ final public class EmploymentActivity extends FeedActivity {
 
         super.onCreate( savedInstanceState );
         
-        // JavaScript makes the Monster mobile site function better
+     // JavaScript makes the Monster mobile site function better
         this.webView.getSettings().setJavaScriptEnabled( true );
         
-        // Get strings
-        this.jobsSource = getString( R.string.jobsRss );
+        // Get strings        
         this.title = getString( R.string.empl_text );
-        this.seeMoreUrl = getString( R.string.jobsViewMore );
-        
+       
+                
         // Set title and courtesy
         ((TextView) findViewById( R.id.title ) ).setText( this.title );
         this.courtesyText.setText( getString( R.string.emplCourtesy ) );
         
-        new FeedTask( this.context ).execute();
+        //add job search dialog
+        addDialog();  
+        
+       
     }
     
     /*
+     * Add dialog
+     * Description: initializes job search dialog
+     */
+    private void addDialog() {
+    	//Build dialog
+        AlertDialog.Builder builder = new AlertDialog.Builder(this.context);
+        
+        LayoutInflater inflater =  ((Activity) this.context).getLayoutInflater();
+        builder.setView(inflater.inflate(R.layout.search_jobs, null));
+        
+        		
+       builder
+        .setCancelable(false)
+        .setTitle(getString(R.string.job_search_title))
+        .setPositiveButton(R.string.search, new DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+								
+				getTextFromDialog();
+				
+			}
+		})
+		
+		.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				dialog.cancel();
+				defaultToPanamaCity();
+							
+			}
+		});
+        
+        dialog = builder.create();
+        
+        dialog.show();
+        job = (EditText) dialog.findViewById(R.id.jobTitle);
+		keyword = (EditText) dialog.findViewById(R.id.keyword);
+		location = (EditText) dialog.findViewById(R.id.location);
+		
+	}
+/*
+ * Default To Panama City
+ * Description: shows Panama City job listings if dialog is canceled 
+ */
+	protected void defaultToPanamaCity() {
+		Toast toast =Toast.makeText( getApplicationContext(), "Defaulting to Panama City Job Listing", Toast.LENGTH_SHORT );
+		toast.setGravity( Gravity.CENTER_HORIZONTAL, 0, 0 );
+        toast.show();
+        
+    	this.seeMoreUrl = getString( R.string.jobsViewMore );
+    	this.jobsSource = getString( R.string.jobsRss );
+		new FeedTask( this.context ).execute();	
+	}
+
+	/*
+	 * Get Text Dialog
+	 * Description: get text from editTexts in dialog. set urls and start task
+	 */
+	protected void getTextFromDialog() {
+		String[] editTexts = new String[3];
+		editTexts[0]= job.getText().toString();
+		editTexts[1] = keyword.getText().toString();
+		editTexts[2] = location.getText().toString();
+		
+		for(int i=0; i<editTexts.length; i++){
+			if(!editTexts[i].matches("")) {
+				editTexts[i]= editTexts[i].replaceAll(" ", "+");
+				editTexts[i]= editTexts[i].replaceAll(",", "");
+			}
+		}
+		
+		this.seeMoreUrl = "http://m.monster.com/JobSearch/Search?jobtitle=" + editTexts[0] + 
+				"&keywords=" + editTexts[1] + "&where=" + editTexts[2];
+		
+		this.jobsSource = "http://rss.jobsearch.monster.com/rssquery.ashx?jobtitle=" + editTexts[0] + 
+				"&keywords=" + editTexts[1] + "&where=" + editTexts[2];
+		
+		
+		new FeedTask( this.context ).execute();
+	}
+
+	/*
      * Get Web Contents
      * Descriptions: Retrieves a page from a given URL.
      */

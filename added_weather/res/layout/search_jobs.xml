@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+    
+    <EditText 
+       android:id="@+id/jobTitle"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:inputType="text"
+       android:hint="@string/jobTitle" />
+    
+    <EditText 
+       android:id="@+id/keyword"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:inputType="text"
+       android:hint="@string/keyword" />
+    
+    <EditText 
+       android:id="@id/location"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:inputType="text" 
+       android:hint="@string/location"/>
+
+</LinearLayout>
