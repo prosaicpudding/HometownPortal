@@ -106,7 +106,7 @@ final public class EventsActivity extends FeedActivity {
                 
                 String title = element.select( "title" ).get( 0 ).text();
                 String description = element.select( "description" ).get( 0 ).text();
-                String link = element.select( "link" ).get( 0 ).text();
+                String link = getString( R.string.eventsViewMore );
 
                 if ( title != null && link != null && description != null )
                     result.add( new Item( title, description, link ) );

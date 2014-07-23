@@ -29,7 +29,7 @@
     <string name="events_text">Events</string>
     <string name="title_activity_events">Events</string>
     <string name="eventsRss">http://www.visitpanamacitybeach.com/includes/cfcs/syndication/RSS/rssManager.cfc?method=showFeed&amp;feedType=events&amp;e_catID=0</string>
-     <string name="eventsViewMore">http://m.visitpanamacitybeach.com/calendar.cfm?menuid=2718</string>
+    <string name="eventsViewMore">http://m.visitpanamacitybeach.com/calendar.cfm?menuid=2718</string>
     
     <string name="newsSource">http://m.newsherald.com/</string>
     <string name="newsViewMore">http://m.newsherald.com</string>
