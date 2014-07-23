@@ -22,6 +22,14 @@
     <string name="returnText">Press Back to Return</string>
     <string name="newsCourtesy">News courtesy of The News Herald</string>
     <string name="emplCourtesy">Jobs courtesy of Monster</string>
+    
+    <string name="eventsCourtesy">Events courtesy of visitpanamacitybeach.com</string>
+    <string name="EventsIcon">Events Icon</string>
+    <string name="events_text">Events</string>
+    <string name="title_activity_events">Events</string>
+    <string name="eventsRss">http://www.visitpanamacitybeach.com/includes/cfcs/syndication/RSS/rssManager.cfc?method=showFeed&amp;feedType=events&amp;e_catID=0</string>
+     <string name="eventsViewMore">http://m.visitpanamacitybeach.com/calendar.cfm?menuid=2718</string>
+    
     <string name="newsSource">http://m.newsherald.com/</string>
     <string name="newsViewMore">http://m.newsherald.com</string>
     <string name="topNews">Top%20News</string>
@@ -48,5 +56,6 @@
         <item>My Location</item>
         <item>Panama City</item>
     </string-array>
+
 
 </resources>

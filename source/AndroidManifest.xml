@@ -29,7 +29,6 @@
             android:theme="@android:style/Theme.NoTitleBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -69,6 +68,10 @@
         <activity 
            android:name="com.android.projecte.townportal.WeatherActivity"
             android:label="@string/title_activity_weather" >
+        </activity>
+        <activity 
+           android:name="com.android.projecte.townportal.EventsActivity"
+            android:label="@string/title_activity_events" >
         </activity>
         <activity
    			android:name="com.google.android.gms.ads.AdActivity"
