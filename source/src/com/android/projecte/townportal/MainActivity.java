@@ -1,5 +1,6 @@
 /* MainActivity.java
- * Project E - Eric Daniels
+ * Hometown Portal
+ * Team Sharp Cookie
  */
 
 package com.android.projecte.townportal;
@@ -152,6 +153,15 @@ public class MainActivity extends Activity {
         	
         	Intent weatherIntent = new Intent(this, WeatherActivity.class);
         	startActivity(weatherIntent);
+        	
+        	break;
+        }
+        case R.id.btnEvents:{
+        	
+        	Intent eventsIntent = new Intent(this, EventsActivity.class);
+        	startActivity(eventsIntent);
+        	
+        	break;
         }
         
         default:

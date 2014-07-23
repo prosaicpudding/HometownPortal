@@ -201,6 +201,26 @@
             
         </LinearLayout>
         
+        <LinearLayout android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ImageButton android:id="@+id/btnEvents"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_launcher_pc"
+                android:contentDescription="@string/events_text"
+                android:onClick="onClick" />
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/events_text"
+                android:textSize="12sp" />
+            
+        </LinearLayout>
+        
         </LinearLayout>
         
     <!--https://developers.google.com/mobile-ads-sdk/docs/admob/fundamentals-->
