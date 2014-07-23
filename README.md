@@ -11,7 +11,8 @@ Completed:
 
 Had to scrap city bus activity since the city transit site's apparently not coming back up.
 Added a general transportation map activity to replace it.
-Added a simple option menu to open the city's website - (Trevor)
+Added a simple option menu to open the city's website.
+Added in a cleaned up menu button inc ase anyone needs it to add another button - (Trevor)
 
 Added options for job search (type of job, location, etc) - Maria
 
