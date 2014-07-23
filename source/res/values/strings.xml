@@ -18,6 +18,7 @@
     <string name="news_text">News</string>
     <string name="empl_text">Employment</string>
     <string name="weather_text">Weather</string>
+    <string name="transportation_text">Transportation</string>
     <string name="loading_text">Loading&#8230;</string>
     <string name="returnText">Press Back to Return</string>
     <string name="newsCourtesy">News courtesy of The News Herald</string>
