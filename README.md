@@ -3,16 +3,15 @@ HometownPortal
 
 Current:
 
-Adding a local events feed / tab (from the Panama city NPR station) -Helen
-(Present)
-
 
 Completed:
+
+Adding a local events feed / tab (from the Panama city NPR station) -Helen
 
 Had to scrap city bus activity since the city transit site's apparently not coming back up.
 Added a general transportation map activity to replace it.
 Added a simple option menu to open the city's website.
-Added in a cleaned up menu button in case anyone needs it to add another button - (Trevor)
+Added in a cleaned up menu button in case anyone needs it to add another button - Trevor
 
 Added options for job search (type of job, location, etc) - Maria
 
