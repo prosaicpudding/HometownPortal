@@ -6,7 +6,7 @@ Current:
 
 Completed:
 
-Adding a local events feed / tab (from the Panama city NPR station) -Helen
+Added a local events feed tab (from visitpanamacitybeach.com) -Helen
 
 Had to scrap city bus activity since the city transit site's apparently not coming back up.
 Added a general transportation map activity to replace it.
