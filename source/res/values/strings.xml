@@ -52,6 +52,12 @@
     <string name="location">City, State or Zip</string>
     <string name="jobTitle">Job Title</string>
     <string name="keyword">Keyword eg. sales, nurse</string>
+    <string name="pcsite">Panama City Website</string>
+    <string name="about">About</string>
+    <string name="transitPage">Panama City Transit Page</string>
+    <string name="trolleySite">Bay Town Trolley Site</string>
+    
+    
 
     <string-array name="locations">
         <item>My Location</item>

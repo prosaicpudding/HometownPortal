@@ -18,6 +18,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
+import android.widget.Toast;
 
 /*
  * Main Activity
@@ -226,6 +227,14 @@ public class MainActivity extends Activity {
 			Intent i = new Intent(Intent.ACTION_VIEW);
 			i.setData(Uri.parse(url));
 			startActivity(i);
+			break;
+		case R.id.about:
+			Toast
+			.makeText(this,
+			"Panama City Portal v3.0",
+			Toast.LENGTH_LONG)
+			.show();
+			return(true);
 		}
 		return (super.onOptionsItemSelected(item));
 	}

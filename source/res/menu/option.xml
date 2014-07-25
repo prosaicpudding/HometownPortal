@@ -3,6 +3,9 @@
 
     <item
         android:id="@+id/pcsite"
-        android:title="Panama City Website"/>
+        android:title="@string/pcsite"/>
+    <item
+        android:id="@+id/about"
+        android:title="@string/about"/>
 
 </menu>

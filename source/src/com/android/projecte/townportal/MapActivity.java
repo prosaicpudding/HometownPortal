@@ -7,9 +7,13 @@ package com.android.projecte.townportal;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTabHost;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.Window;
 import android.widget.TextView;
 
@@ -26,6 +30,7 @@ public class MapActivity extends FragmentActivity {
     // so we need to make sure that if anyone is loading that it stays
     // there.
     private AtomicInteger loadingCounter = new AtomicInteger( 0 );
+    private String title;
 	
     @Override
     protected void onCreate( Bundle savedInstanceState ) {
@@ -34,7 +39,7 @@ public class MapActivity extends FragmentActivity {
         
         // http://stackoverflow.com/questions/2736389/how-to-pass-object-from-one-activity-to-another-in-android
         Intent intent = getIntent();
-        String title = ( String ) intent.getSerializableExtra( "title" );
+        title = ( String ) intent.getSerializableExtra( "title" );
         PlaceType pt1 = (PlaceType) intent.getSerializableExtra( "PlaceType1" );
         PlaceType pt2 = (PlaceType) intent.getSerializableExtra( "PlaceType2" );
         PlaceType pt3 = (PlaceType) intent.getSerializableExtra( "PlaceType3" );
@@ -84,4 +89,31 @@ public class MapActivity extends FragmentActivity {
                 (int) ( heightValue * this.getResources().getDisplayMetrics().density );
 
     }
+    
+    @Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+    	if (title.equals("Transportation"))
+		new MenuInflater(this).inflate(R.menu.option_map, menu);
+		return (super.onCreateOptionsMenu(menu));
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		if (title.equals("Transportation")) {
+		switch (item.getItemId()) {
+		case R.id.transitSite:
+			String url = "http://www.pcgov.org/residents/transportation";
+			Intent i = new Intent(Intent.ACTION_VIEW);
+			i.setData(Uri.parse(url));
+			startActivity(i);
+			break;
+		case R.id.trolley:
+			String url2 = "http://www.baytowntrolley.org/"; // Site currently down
+			Intent j = new Intent(Intent.ACTION_VIEW);
+			j.setData(Uri.parse(url2));
+			startActivity(j);
+			} // end switch
+		} // end if
+		return (super.onOptionsItemSelected(item));
+	}
 }
