@@ -57,7 +57,7 @@ final public class EmploymentActivity extends FeedActivity {
        
                 
         // Set title and courtesy
-        ((TextView) findViewById( R.id.title ) ).setText( this.title );
+
         this.courtesyText.setText( getString( R.string.emplCourtesy ) );
         
         //add job search dialog

@@ -70,7 +70,7 @@ public class GooglePlacesMap extends Fragment implements AdapterView.OnItemSelec
     private Spinner spinner;
     private Location locationDetails;
     private WebView mapView;
-    private TextView loadingText;
+
     private FragmentActivity context;
     private int currentSpinnerIndex;
     private boolean alreadyStarted = false;
@@ -97,7 +97,7 @@ public class GooglePlacesMap extends Fragment implements AdapterView.OnItemSelec
         this.spinner = (Spinner) view.findViewById( R.id.spinner1 );
         this.mapView = (WebView) view.findViewById( R.id.mapview );
         this.placesList = (ListView) view.findViewById( R.id.list );
-        this.loadingText = (TextView) getActivity().findViewById( R.id.loading );
+
         
         
         this.spinner.setOnItemSelectedListener( this );
@@ -509,8 +509,8 @@ public class GooglePlacesMap extends Fragment implements AdapterView.OnItemSelec
         	
         	loadingCounter.addAndGet( 1 );
         	
-        	if ( loadingCounter.get() == 1 )
-        		loadingText.setVisibility( View.VISIBLE );
+
+
         		
         }
         
@@ -528,8 +528,8 @@ public class GooglePlacesMap extends Fragment implements AdapterView.OnItemSelec
         	
         	loadingCounter.addAndGet( -1 );
         	
-        	if ( loadingCounter.get() == 0 )
-        		loadingText.setVisibility( View.GONE );
+
+
         	
         	if ( result != null ) {
         		
@@ -593,8 +593,8 @@ public class GooglePlacesMap extends Fragment implements AdapterView.OnItemSelec
         	
         	loadingCounter.addAndGet( 1 );
         	
-        	if ( loadingCounter.get() == 1 )
-        		loadingText.setVisibility( View.VISIBLE );
+
+
         }
         
         @Override
@@ -611,8 +611,8 @@ public class GooglePlacesMap extends Fragment implements AdapterView.OnItemSelec
         	
         	loadingCounter.addAndGet( -1 );
         	
-        	if ( loadingCounter.get() == 0 )
-        		loadingText.setVisibility( View.GONE );
+
+
 
         	if ( placeDetail != null ) {
         		

@@ -45,7 +45,7 @@ final public class EventsActivity extends FeedActivity {
        
                 
         // Set title and courtesy
-        ((TextView) findViewById( R.id.title ) ).setText( this.title );
+
         this.courtesyText.setText( getString( R.string.eventsCourtesy ) );
           
     	this.seeMoreUrl = getString( R.string.eventsViewMore );

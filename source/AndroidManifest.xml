@@ -5,8 +5,8 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="11"
-        android:targetSdkVersion="19"
+        android:minSdkVersion="16"
+        android:targetSdkVersion="20"
         />
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -20,11 +20,11 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher_pc"
         android:label="@string/app_name"
-        android:theme="@style/customTheme" >
+        android:theme="@style/Theme.Hometownportal" >
         <meta-data android:name="com.google.android.gms.version"
                android:value="@integer/google_play_services_version"/>
         <activity
-            android:name="com.android.projecte.townportal.SplashActivity"
+            android:name=".SplashActivity"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.NoTitleBar" >
             <intent-filter>
@@ -33,25 +33,25 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.android.projecte.townportal.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.android.projecte.townportal.MapActivity"
+            android:name=".MapActivity"
             android:label="@string/app_name" 
             android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
-            android:name="com.android.projecte.townportal.GooglePlacesMap"
+            android:name=".GooglePlacesMap"
             android:label="Google Places Map"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
         <activity
-            android:name="com.android.projecte.townportal.PlaceDetailActivity"
+            android:name=".PlaceDetailActivity"
             android:label="@string/title_activity_place_detail" >
         </activity>
         <activity
-            android:name="com.android.projecte.townportal.NewsActivity"
+            android:name=".NewsActivity"
             android:label="@string/title_activity_news"
             android:parentActivityName="com.android.projecte.townportal.MainActivity" >
             <meta-data
@@ -59,19 +59,19 @@
                 android:value="com.android.projecte.townportal.MainActivity" />
         </activity>
         <activity
-            android:name="com.android.projecte.townportal.EmploymentActivity"
+            android:name=".EmploymentActivity"
             android:label="@string/title_activity_employment" >
         </activity>
         <activity
-            android:name="com.android.projecte.townportal.FeedActivity"
+            android:name=".FeedActivity"
             android:label="@string/title_activity_feed" >
         </activity>
         <activity 
-           android:name="com.android.projecte.townportal.WeatherActivity"
+           android:name=".WeatherActivity"
             android:label="@string/title_activity_weather" >
         </activity>
         <activity 
-           android:name="com.android.projecte.townportal.EventsActivity"
+           android:name=".EventsActivity"
             android:label="@string/title_activity_events" >
         </activity>
         <activity

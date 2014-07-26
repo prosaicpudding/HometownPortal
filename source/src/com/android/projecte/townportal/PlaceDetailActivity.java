@@ -26,8 +26,8 @@ import android.widget.TextView;
 public class PlaceDetailActivity extends Activity {
 
     private TextView nameTextView, ratingTextView, priceTextView, 
-                addressTextView, phoneNumberTextView, websiteTextView,
-                loadingText;
+                addressTextView, phoneNumberTextView, websiteTextView;
+
     private ImageView photoImageView;
     
     private GooglePlacesSearch gpSearch;
@@ -45,8 +45,8 @@ public class PlaceDetailActivity extends Activity {
         // Use custom title bar
         requestWindowFeature( Window.FEATURE_CUSTOM_TITLE );
         setContentView( R.layout.activity_place_detail );
-        getWindow().setFeatureInt( Window.FEATURE_CUSTOM_TITLE, R.layout.custom_title );
-        ((TextView) findViewById( R.id.title ) ).setText( R.string.returnText );
+
+
 
         // Set Place detail TextViews
         this.nameTextView = (TextView) findViewById( R.id.nameText );
@@ -56,7 +56,7 @@ public class PlaceDetailActivity extends Activity {
         this.phoneNumberTextView = (TextView) findViewById( R.id.phoneNumberText );
         this.websiteTextView = (TextView) findViewById( R.id.websiteText );
         this.photoImageView = (ImageView) findViewById( R.id.photoImage );
-        this.loadingText = (TextView) findViewById( R.id.loading );
+
         
         // Set TextViews
         this.nameTextView.setText( getIntent().getExtras().getString( "name" ) );
@@ -107,8 +107,8 @@ public class PlaceDetailActivity extends Activity {
         	
         	loadingCounter.addAndGet( 1 );
         	
-        	if ( loadingCounter.get() == 1 )
-        		loadingText.setVisibility( View.VISIBLE );
+
+
         }
 
         @Override
@@ -125,8 +125,8 @@ public class PlaceDetailActivity extends Activity {
         	
         	loadingCounter.addAndGet( -1 );
         	
-        	if ( loadingCounter.get() == 0 )
-        		loadingText.setVisibility( View.GONE );
+
+
         	
             // Set Photo ImageView
             if ( placePhoto.photo != null )

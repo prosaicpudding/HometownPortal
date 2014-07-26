@@ -45,10 +45,10 @@ public class MapActivity extends FragmentActivity {
         PlaceType pt3 = (PlaceType) intent.getSerializableExtra( "PlaceType3" );
 
         // Use custom title bar
-        requestWindowFeature( Window.FEATURE_CUSTOM_TITLE );
+
         setContentView( R.layout.activity_map_tabs );
-        getWindow().setFeatureInt( Window.FEATURE_CUSTOM_TITLE, R.layout.custom_title );
-        ((TextView) findViewById( R.id.title ) ).setText( title );
+
+
 
         // Set up TabHost
         FragmentTabHost tabHost = (FragmentTabHost) findViewById( android.R.id.tabhost );
@@ -81,12 +81,11 @@ public class MapActivity extends FragmentActivity {
 
         tabHost.setCurrentTab( 0 );
 
-        // loop through all tab views and set height value
-        // http://www.speakingcode.com/2011/10/17/adjust-height-of-android-tabwidget/
-        int heightValue = 30;
-        for ( int i = 0; i < tabHost.getTabWidget().getTabCount(); i++ )
-            tabHost.getTabWidget().getChildAt( i ).getLayoutParams().height = 
-                (int) ( heightValue * this.getResources().getDisplayMetrics().density );
+
+
+
+
+
 
     }
     

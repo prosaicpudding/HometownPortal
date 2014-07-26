@@ -42,7 +42,7 @@ public abstract class FeedActivity extends Activity {
     protected ArrayAdapter<Item> adapter;
     protected ListView list;
     protected WebView webView;
-    protected TextView courtesyText, titleText, loadingText;
+    protected TextView courtesyText, titleText;
     protected View divider;
     protected Boolean viewingItem = false;
     protected String title, seeMoreUrl;
@@ -60,16 +60,16 @@ public abstract class FeedActivity extends Activity {
         super.onCreate( savedInstanceState );
         
         // Use custom title bar
-        requestWindowFeature( Window.FEATURE_CUSTOM_TITLE );
+
         setContentView( R.layout.activity_feed );
-        getWindow().setFeatureInt( Window.FEATURE_CUSTOM_TITLE, R.layout.custom_title );
+
         
         // Get Views
         this.list = (ListView) findViewById( R.id.feedList );
         this.webView = (WebView) findViewById( R.id.feedWebView );
         this.courtesyText = (TextView) findViewById( R.id.feedCourtesy );
-        this.titleText = (TextView) findViewById( R.id.title );
-        this.loadingText = (TextView) findViewById( R.id.loading );
+
+
         this.divider = findViewById( R.id.feedDivider );
         
         // Create custom adapter
@@ -149,7 +149,7 @@ public abstract class FeedActivity extends Activity {
                 list.setVisibility( View.GONE );
                 divider.setVisibility( View.GONE );
                 courtesyText.setVisibility( View.GONE );
-                loadingText.setVisibility( View.VISIBLE );
+
                 
                 webView.loadUrl( modifyUrl( item.link ) );
                 webView.setVisibility( View.VISIBLE );
@@ -180,7 +180,7 @@ public abstract class FeedActivity extends Activity {
                 
                 super.onPageFinished( webview, url );
                 
-                loadingText.setVisibility( View.INVISIBLE );
+
             }
         });
     }
@@ -222,7 +222,7 @@ public abstract class FeedActivity extends Activity {
             this.divider.setVisibility( View.GONE );
             this.courtesyText.setVisibility( View.GONE );
             this.webView.setVisibility( View.VISIBLE );
-            this.loadingText.setVisibility( View.VISIBLE );
+
         
         }
         
@@ -294,7 +294,7 @@ public abstract class FeedActivity extends Activity {
         protected void onPreExecute() {
             
         	feedTasks.add( this );
-            loadingText.setVisibility( View.VISIBLE );
+
         }
         
         @Override
@@ -320,7 +320,7 @@ public abstract class FeedActivity extends Activity {
                 
                 adapter.notifyDataSetChanged();
                 
-                loadingText.setVisibility( View.INVISIBLE );
+
                 
                 list.setSelection( savedFirstVisiblePosition );
         	
@@ -349,7 +349,7 @@ public abstract class FeedActivity extends Activity {
                 
                 adapter.notifyDataSetChanged();
                 
-                loadingText.setVisibility( View.INVISIBLE );
+
         	}
         }
     }

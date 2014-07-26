@@ -43,9 +43,9 @@ public class MainActivity extends Activity {
         super.onCreate( savedInstanceState );
 
         // Use custom title bar
-        requestWindowFeature( Window.FEATURE_CUSTOM_TITLE );
+
         setContentView( R.layout.activity_main );
-        getWindow().setFeatureInt( Window.FEATURE_CUSTOM_TITLE, R.layout.custom_title );
+
         
         // Get titles
         this.foodTitle = getString( R.string.food_text );
