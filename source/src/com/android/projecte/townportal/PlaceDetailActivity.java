@@ -42,8 +42,6 @@ public class PlaceDetailActivity extends Activity {
         this.gpSearch = new GooglePlacesSearch( getIntent().getExtras().getString( "gpSearchType" ), 
                 getIntent().getExtras().getString( "gpSearchGeoLocation" ), 1 );
         
-        // Use custom title bar
-        requestWindowFeature( Window.FEATURE_CUSTOM_TITLE );
         setContentView( R.layout.activity_place_detail );
 
 
