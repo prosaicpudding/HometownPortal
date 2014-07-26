@@ -1,12 +1,12 @@
 HometownPortal
 ==============
 
-# H4 Current:
+#### Current:
 
 * Reworking the GUI so that it looks like a modern application - Alex
 * Fixing the news reader. - Alex
 
-# H4 Completed:
+#### Completed:
 
 * Added a local events feed tab (from visitpanamacitybeach.com) -Helen
 * Had to scrap city bus activity since the city transit site's apparently not coming back up.
