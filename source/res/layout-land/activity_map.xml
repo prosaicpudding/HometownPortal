@@ -15,6 +15,18 @@
 		android:layout_width="0dip"
 		android:layout_height="wrap_content"
 		android:orientation="vertical" >
+		
+	    <EditText android:id="@+id/filter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:imeActionId="1337"
+        android:focusable="true"
+        android:focusableInTouchMode ="true"
+        android:imeOptions="actionDone"
+        android:hint="@string/filterHint"
+        android:visibility="gone"
+        android:inputType="text" />
 	
 		<Spinner android:id="@+id/spinner1"
 		    android:layout_width="match_parent"

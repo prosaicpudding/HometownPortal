@@ -23,18 +23,27 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.text.Editable;
+import android.text.TextWatcher;
 
 @SuppressLint ( "SetJavaScriptEnabled")
 /*
@@ -68,11 +77,21 @@ public class GooglePlacesMap extends Fragment implements AdapterView.OnItemSelec
     private List<ListViewTask> listViewTasks = new Vector<ListViewTask>();
     private List<DetailTask> detailTasks = new Vector<DetailTask>(); 
     private AtomicInteger loadingCounter;
+    private EditText filter;
+    private InputMethodManager imm;
+    
+    // Allow menu creation
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
     
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         
         View view = inflater.inflate( R.layout.activity_map, container, false );
+        
 
         // Get views
         this.spinner = (Spinner) view.findViewById( R.id.spinner1 );
@@ -80,7 +99,9 @@ public class GooglePlacesMap extends Fragment implements AdapterView.OnItemSelec
         this.placesList = (ListView) view.findViewById( R.id.list );
         this.loadingText = (TextView) getActivity().findViewById( R.id.loading );
         
+        
         this.spinner.setOnItemSelectedListener( this );
+        
         
         this.mapView.getSettings().setJavaScriptEnabled( true );
         this.mapView.addJavascriptInterface( new WebAppInterface(), "Android" );
@@ -133,9 +154,73 @@ public class GooglePlacesMap extends Fragment implements AdapterView.OnItemSelec
             		new DetailTask( place ).execute();
             }
         });
+       
+        filter = (EditText) view.findViewById(R.id.filter);
+        
+        // Hide KB + filter box when Done
+        filter.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                 if (actionId == EditorInfo.IME_ACTION_SEARCH ||
+                        actionId == EditorInfo.IME_ACTION_DONE ||
+                        actionId == EditorInfo.IME_ACTION_GO ||
+                        event.getAction() == KeyEvent.ACTION_DOWN &&
+                        event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
+
+                    imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(filter.getWindowToken(), 0);
+                    filter.setVisibility(View.GONE);
+                }
+                return false;
+            }
+        });
+        
+        // Hide KB + filter box when filter loses focus
+        filter.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                	filter.setVisibility(View.GONE);
+                }
+            }
+        });
         
         return view;
     }
+    
+    
+    // Filter option
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+    	super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.option_filter, menu);
+	}
+    
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+       switch (item.getItemId()) {
+          case R.id.filterMenu:
+        	  filter.setVisibility(0);
+        	  filter.requestFocus();
+              filter.addTextChangedListener(new TextWatcher() {
+                  
+                  @Override
+                  public void onTextChanged(CharSequence c, int arg1, int arg2, int arg3) {
+                      adapter.getFilter().filter(c);
+                  }
+                   
+                  @Override
+                  public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
+                          int arg3) {
+                  }
+                   
+                  @Override
+                  public void afterTextChanged(Editable arg0) {
+                  }
+              });
+              break;
+       }
+      		return (super.onOptionsItemSelected(item));
+       }   
     
     @Override
     public void onDestroy() {
@@ -612,6 +697,8 @@ public class GooglePlacesMap extends Fragment implements AdapterView.OnItemSelec
             this.mapView.loadData( getMapHTML(), "text/html", "UTF-8" );
         }
     }
+    
+    
     
     @Override
     /*
