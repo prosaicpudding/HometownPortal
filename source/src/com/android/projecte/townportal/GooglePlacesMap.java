@@ -180,6 +180,8 @@ public class GooglePlacesMap extends Fragment implements AdapterView.OnItemSelec
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
                 	filter.setVisibility(View.GONE);
+                	imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                	imm.hideSoftInputFromWindow(filter.getWindowToken(), 0);
                 }
             }
         });
