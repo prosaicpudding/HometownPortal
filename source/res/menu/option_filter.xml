@@ -3,6 +3,5 @@
     <item
         android:id="@+id/filterMenu"
         android:title="@string/filterTitle"
-        android:actionLayout="@layout/filter"
         android:showAsAction="ifRoom" />
 </menu>
