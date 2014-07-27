@@ -147,7 +147,8 @@ public abstract class FeedActivity extends Activity {
                 divider.setVisibility( View.GONE );
                 courtesyText.setVisibility( View.GONE );
 
-                webView.loadUrl( modifyUrl( item.link ) );
+                webView.setWebViewClient(new WebViewClient());
+                webView.loadUrl(item.link);
                 webView.setVisibility( View.VISIBLE );
             }    
             
