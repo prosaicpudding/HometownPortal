@@ -34,8 +34,7 @@ public class WeatherActivity extends Activity implements AdapterView.OnItemSelec
 	private Spinner spinner;
 	private Location locationDetails;
 	private static TextView cityText, condDescr, temp, press, windSpeed, unitTemp, hum, tempMin, tempMax, 
-	sunset, sunrise, cloud;
-	//ot , titleText;
+	sunset, sunrise, cloud, titleText;
 	private static ImageView imgView;
 	protected static ListView forecastList;
 	private WeatherInfo info2;
@@ -47,13 +46,13 @@ public class WeatherActivity extends Activity implements AdapterView.OnItemSelec
 	 protected void onCreate( Bundle savedInstanceState ) {
 
 	        super.onCreate( savedInstanceState );
-	       //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+	       
 	        // Use custom title bar
-
+	        requestWindowFeature( Window.FEATURE_CUSTOM_TITLE );
 	        setContentView( R.layout.activity_weather );
-
-
-
+	        getWindow().setFeatureInt( Window.FEATURE_CUSTOM_TITLE, R.layout.custom_title );
+	        titleText = (TextView) findViewById( R.id.title );
+	        titleText.setText(getString(R.string.weather_text));
 	        
 	        info2 = new WeatherInfo();
 	        url = searchUrl + searchId + cityID;
@@ -62,11 +61,19 @@ public class WeatherActivity extends Activity implements AdapterView.OnItemSelec
 	        url2 = searchForUrl + searchId + cityID + searchCount;
 	        getForecast();
 	 }
-
+/*
+ * getForecast
+ * Description: initializes weatherForecast class to get forecast information
+ */
 	 private void getForecast() {
 		 new WeatherForecast(url2, getApplication());	
 	}
 
+	 /*
+	  * class JSONParse
+	  * Description: gets JSON object (for current weather) from WeatherInfo class, 
+	  * gets parsed and updates layout.
+	  */
 	private class JSONParse extends AsyncTask<String, String, JSONObject> {
 	       
 	      @Override
@@ -130,7 +137,10 @@ public class WeatherActivity extends Activity implements AdapterView.OnItemSelec
 	    }
 	
 	 
-//Initialize textViews and imageViews
+/*
+ * startviews
+ * Description: Initialize textViews and imageViews
+ */
 	private void startViews() {
 			
 			cityText = (TextView) findViewById(R.id.location);
@@ -150,7 +160,10 @@ public class WeatherActivity extends Activity implements AdapterView.OnItemSelec
 		
 	}
 	
-	//Initialize spinner
+	/*
+	 * startSpinner
+	 * Description: Initialize spinner
+	 */
 	private void startSpinner() {
 		spinner = (Spinner) findViewById(R.id.spinner2);
 		spinner.setOnItemSelectedListener(this);
@@ -158,7 +171,11 @@ public class WeatherActivity extends Activity implements AdapterView.OnItemSelec
 		
 	}
 
- //Listener for spinner
+ /*
+  * onItemSelected
+  * Description: Listener for spinner(non-Javadoc)
+  * @see android.widget.AdapterView.OnItemSelectedListener#onItemSelected(android.widget.AdapterView, android.view.View, int, long)
+  */
 	@Override
 	public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 		if(0 == spinner.getSelectedItemPosition()){
@@ -183,7 +200,11 @@ public class WeatherActivity extends Activity implements AdapterView.OnItemSelec
 		}
 	}
 
-
+/*
+ * getLocationDet
+ * Description: gets location coordinates for my location option
+ * 
+ */
 	private void getLocationDet() {
 		bestProvider = locationManager.getBestProvider( new Criteria(), true ); 
 		if ( bestProvider != null ) {

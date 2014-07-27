@@ -31,7 +31,10 @@ public class WeatherInfo {
 		  WeatherInfo() {
 		  }
 		  
-		  //Get JSON object from openweathermap
+		  /*
+		   * getJSONfromUrl
+		   * Description: Get JSON object from openweathermap
+		   */
 		  public JSONObject getJSONFromUrl(String url) {
 		   
 		    try {
@@ -71,14 +74,20 @@ public class WeatherInfo {
 		    return jObj;
 		  }
 		  
-		//Convert temperature from Kelvin to Farenheit
+		/*
+		 * convert temperature
+		 * Description: Convert temperature from Kelvin to Farenheit
+		 */
 		public Double convertTemperature(double double1) {
 			Double result;
 			result = 9 * (double1 - 273.15) / 5 + 32;
 			return result;
 		}
 
-		//Convert date from unix format to HH:mm
+		/*
+		 * convert Date
+		 * Description: Convert date from unix format to HH:mm
+		 */
 		public String convertDate(long unixTime) {
 	        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm", Locale.US);
 	        Calendar cal = Calendar.getInstance();
@@ -87,7 +96,10 @@ public class WeatherInfo {
 	        return sdf.format(cal.getTime());
 	    }
 	   
-		//Convert speed from mps to mph
+		/*
+		 * convert Speed
+		 * Description: Convert speed from mps to mph
+		 */
 		public String convertSpeed(Double mps){
 		Double res;
 		String mph;

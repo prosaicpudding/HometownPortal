@@ -38,6 +38,11 @@ public class WeatherForecast {
 		new JSONParse().execute();
 	}
 	
+	/*
+	 * class JSONParse
+	 * Description: gets JSON object (for forecast weather) from WeatherInfo class, 
+	 * gets parsed and calls list adapter
+	 */
 	private class JSONParse extends AsyncTask<String, String, JSONObject> {
 	        
 	      @Override
@@ -78,7 +83,10 @@ public class WeatherForecast {
 	       }
 	    }
 	
-	
+	/*
+	 * class: weatherAdapter
+	 * Description: used to update listView with forecast information
+	 */
 	 class WeatherAdapter extends ArrayAdapter<dayForecast>{
 
 		WeatherAdapter(){
@@ -114,6 +122,10 @@ public class WeatherForecast {
 	
 }
 
+/*
+ * class: dayForecast
+ * Description: helper class to save forecast information per day
+ */
 class dayForecast{
 
 	public double temp_max;
