@@ -34,7 +34,7 @@ public class WeatherActivity extends Activity implements AdapterView.OnItemSelec
 	private Spinner spinner;
 	private Location locationDetails;
 	private static TextView cityText, condDescr, temp, press, windSpeed, unitTemp, hum, tempMin, tempMax, 
-	sunset, sunrise, cloud, titleText;
+	sunset, sunrise, cloud;
 	private static ImageView imgView;
 	protected static ListView forecastList;
 	private WeatherInfo info2;
@@ -46,13 +46,8 @@ public class WeatherActivity extends Activity implements AdapterView.OnItemSelec
 	 protected void onCreate( Bundle savedInstanceState ) {
 
 	        super.onCreate( savedInstanceState );
-	       
-	        // Use custom title bar
-	        requestWindowFeature( Window.FEATURE_CUSTOM_TITLE );
+
 	        setContentView( R.layout.activity_weather );
-	        getWindow().setFeatureInt( Window.FEATURE_CUSTOM_TITLE, R.layout.custom_title );
-	        titleText = (TextView) findViewById( R.id.title );
-	        titleText.setText(getString(R.string.weather_text));
 	        
 	        info2 = new WeatherInfo();
 	        url = searchUrl + searchId + cityID;
