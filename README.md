@@ -4,6 +4,9 @@ HometownPortal
 #### Current:
 
 * Reworking the GUI so that it looks like a modern application - Alex
+** On the landing view, need to make clicking on the navigation rows act like clicking on the navigation icons
+** Need to add a refresh action to the action bar and remove the "refresh" buttons in several of the views.
+** Need to finish the image switcher so that the banner cycles through the banner?.png images
 
 #### Completed:
 
