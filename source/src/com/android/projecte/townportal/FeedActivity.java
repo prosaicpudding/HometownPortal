@@ -58,8 +58,6 @@ public abstract class FeedActivity extends Activity {
     protected void onCreate( Bundle savedInstanceState ) {
 
         super.onCreate( savedInstanceState );
-        
-        // Use custom title bar
 
         setContentView( R.layout.activity_feed );
 
@@ -144,13 +142,11 @@ public abstract class FeedActivity extends Activity {
                 
                 // Show WebView only
                 viewingItem = true;
-                titleText.setText( R.string.returnText );
                 
                 list.setVisibility( View.GONE );
                 divider.setVisibility( View.GONE );
                 courtesyText.setVisibility( View.GONE );
 
-                
                 webView.loadUrl( modifyUrl( item.link ) );
                 webView.setVisibility( View.VISIBLE );
             }    
@@ -241,7 +237,6 @@ public abstract class FeedActivity extends Activity {
             this.courtesyText.setVisibility( View.VISIBLE );
             
             this.viewingItem = false;
-            this.titleText.setText( title );
             
             this.webView.loadUrl("about:blank");
             
