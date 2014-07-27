@@ -56,7 +56,7 @@ final public class NewsActivity extends FeedActivity {
                 
                 // http://jsoup.org/apidocs/org/jsoup/select/Selector.html
                 String title       = element.select( ".articleTitle" ).get( 0 ).text();
-                String description = "test-description";
+                String description = element.select(".articleSum").get(0).text();
                 String link        = null;
                 String lousy_link  = element.select( "a" ).get( 0 ).attr( "href" );
 
