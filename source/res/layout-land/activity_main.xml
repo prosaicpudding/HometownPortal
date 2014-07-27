@@ -12,13 +12,13 @@
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="wrap_content"
-        android:layout_height="300dp"
+        android:layout_height="200dp"
         android:scaleType="matrix"
         android:src="@drawable/banner1" />
 
     <ScrollView
         android:id="@+id/scrollView1"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp" >
 
@@ -33,8 +33,8 @@
 
                 <ImageButton
                     android:id="@+id/btnFood"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:background="@drawable/ic_food"
                     android:contentDescription="@string/food_text"
                     android:onClick="onClick" />
@@ -66,8 +66,8 @@
 
                 <ImageButton
                     android:id="@+id/btnShopping"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:background="@drawable/ic_shopping"
                     android:contentDescription="@string/shopping_text"
                     android:onClick="onClick" />
@@ -100,8 +100,8 @@
 
                 <ImageButton
                     android:id="@+id/btnEntertainment"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:background="@drawable/ic_music"
                     android:contentDescription="@string/entertainment_text"
                     android:onClick="onClick" />
@@ -134,8 +134,8 @@
 
                 <ImageButton
                     android:id="@+id/btnSchools"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:background="@drawable/ic_school"
                     android:contentDescription="@string/schools_text"
                     android:onClick="onClick" />
@@ -168,8 +168,8 @@
 
                 <ImageButton
                     android:id="@+id/btnNews"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:background="@drawable/ic_news"
                     android:contentDescription="@string/news_text"
                     android:onClick="onClick" />
@@ -202,8 +202,8 @@
 
                 <ImageButton
                     android:id="@+id/btnEmployment"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:background="@drawable/ic_work"
                     android:contentDescription="@string/empl_text"
                     android:onClick="onClick" />
@@ -236,8 +236,8 @@
 
                 <ImageButton
                     android:id="@+id/btnTransportation"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:background="@drawable/ic_bus"
                     android:contentDescription="@string/transportation_text"
                     android:onClick="onClick" />
@@ -270,8 +270,8 @@
 
                 <ImageButton
                     android:id="@+id/btnWeather"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:background="@drawable/ic_weather"
                     android:contentDescription="@string/weather_text"
                     android:onClick="onClick" />
@@ -304,8 +304,8 @@
 
                 <ImageButton
                     android:id="@+id/btnEvents"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:background="@drawable/ic_calendar"
                     android:contentDescription="@string/events_text"
                     android:onClick="onClick" />

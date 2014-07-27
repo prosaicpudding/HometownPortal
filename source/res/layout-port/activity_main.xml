@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/LinearLayout0"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:scaleType="matrix"
+        android:src="@drawable/banner1" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <ImageButton
+                    android:id="@+id/btnFood"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:background="@drawable/ic_food"
+                    android:contentDescription="@string/food_text"
+                    android:onClick="onClick" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/food_text"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:text="Craving a delicious meal?"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <ImageButton
+                    android:id="@+id/btnShopping"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:background="@drawable/ic_shopping"
+                    android:contentDescription="@string/shopping_text"
+                    android:onClick="onClick" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/shopping_text"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/TextView01"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:text="Enjoy shopping in a beautiful beach town."
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <ImageButton
+                    android:id="@+id/btnEntertainment"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:background="@drawable/ic_music"
+                    android:contentDescription="@string/entertainment_text"
+                    android:onClick="onClick" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/entertainment_text"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/TextView02"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:text="Enjoy our entertainment scene."
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <ImageButton
+                    android:id="@+id/btnSchools"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:background="@drawable/ic_school"
+                    android:contentDescription="@string/schools_text"
+                    android:onClick="onClick" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/schools_text"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/TextView03"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:text="We have great schools, including a FSU branch!"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <ImageButton
+                    android:id="@+id/btnNews"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:background="@drawable/ic_news"
+                    android:contentDescription="@string/news_text"
+                    android:onClick="onClick" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/news_text"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/TextView08"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:text="Find out what&apos;s going on locally."
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <ImageButton
+                    android:id="@+id/btnEmployment"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:background="@drawable/ic_work"
+                    android:contentDescription="@string/empl_text"
+                    android:onClick="onClick" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/empl_text"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/TextView04"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:text="Have you ever dreamed of living near the beach? Find a job here and make it happen!"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <ImageButton
+                    android:id="@+id/btnTransportation"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:background="@drawable/ic_bus"
+                    android:contentDescription="@string/transportation_text"
+                    android:onClick="onClick" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/transportation_text"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/TextView05"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:text="Getting around Panama City is easy."
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <ImageButton
+                    android:id="@+id/btnWeather"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:background="@drawable/ic_weather"
+                    android:contentDescription="@string/weather_text"
+                    android:onClick="onClick" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/weather_text"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/TextView06"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:text="No one wants to get rained on, so check the weather forcast."
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <ImageButton
+                    android:id="@+id/btnEvents"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:background="@drawable/ic_calendar"
+                    android:contentDescription="@string/events_text"
+                    android:onClick="onClick" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/events_text"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/TextView07"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:text="Enjoy local concerts, sports, and more!"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- https://developers.google.com/mobile-ads-sdk/docs/admob/fundamentals -->
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="INSERT_YOUR_AD_UNIT_ID_HERE" >
+    </com.google.android.gms.ads.AdView>
+
+</LinearLayout>
