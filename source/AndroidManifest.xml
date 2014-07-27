@@ -18,7 +18,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher_pc"
+        android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/Theme.Hometownportal" >
         <meta-data android:name="com.google.android.gms.version"
