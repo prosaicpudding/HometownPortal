@@ -4,7 +4,7 @@
     xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
+    android:background="@drawable/beach_background"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
@@ -24,10 +24,11 @@
             android:gravity="center"
             android:orientation="vertical" >
 
-            <ImageButton android:id="@+id/btnFood"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/restaurants"
+            <ImageButton
+                android:id="@+id/btnFood"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@drawable/ic_food"
                 android:contentDescription="@string/food_text"
                 android:onClick="onClick" />
 
@@ -46,10 +47,11 @@
             android:gravity="center"
             android:orientation="vertical" >
 
-            <ImageButton android:id="@+id/btnEntertainment"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/entertainment"
+            <ImageButton
+                android:id="@+id/btnEntertainment"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@drawable/ic_music"
                 android:contentDescription="@string/entertainment_text"
                 android:onClick="onClick" />
 
@@ -68,10 +70,11 @@
             android:gravity="center"
             android:orientation="vertical" >
 
-            <ImageButton android:id="@+id/btnShopping"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/shopping"
+            <ImageButton
+                android:id="@+id/btnShopping"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@drawable/ic_shopping"
                 android:contentDescription="@string/shopping_text"
                 android:onClick="onClick" />
 
@@ -102,10 +105,11 @@
             android:gravity="center"
             android:orientation="vertical" >
 
-            <ImageButton android:id="@+id/btnSchools"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/schools"
+            <ImageButton
+                android:id="@+id/btnSchools"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@drawable/ic_school"
                 android:contentDescription="@string/schools_text"
                 android:onClick="onClick" />
 
@@ -124,10 +128,11 @@
             android:gravity="center"
             android:orientation="vertical" >
 
-            <ImageButton android:id="@+id/btnEmployment"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/employment"
+            <ImageButton
+                android:id="@+id/btnEmployment"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@drawable/ic_work"
                 android:contentDescription="@string/empl_text"
                 android:onClick="onClick" />
 
@@ -146,10 +151,11 @@
             android:gravity="center"
             android:orientation="vertical" >
 
-            <ImageButton android:id="@+id/btnNews"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/news"
+            <ImageButton
+                android:id="@+id/btnNews"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@drawable/ic_news"
                 android:contentDescription="@string/news_text"
                 android:onClick="onClick" />
 
@@ -180,10 +186,11 @@
             android:gravity="center"
             android:orientation="vertical" >
 
-            <ImageButton android:id="@+id/btnTransportation"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/transportation"
+            <ImageButton
+                android:id="@+id/btnTransportation"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@drawable/ic_bus"
                 android:contentDescription="@string/transportation_text"
                 android:onClick="onClick" />
 
@@ -202,10 +209,11 @@
             android:gravity="center"
             android:orientation="vertical" >
 
-            <ImageButton android:id="@+id/btnWeather"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/weather"
+            <ImageButton
+                android:id="@+id/btnWeather"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@drawable/ic_weather"
                 android:contentDescription="@string/weather_text"
                 android:onClick="onClick" />
 
@@ -224,10 +232,11 @@
             android:gravity="center"
             android:orientation="vertical" >
 
-            <ImageButton android:id="@+id/btnEvents"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/events"
+            <ImageButton
+                android:id="@+id/btnEvents"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@drawable/ic_calendar"
                 android:contentDescription="@string/events_text"
                 android:onClick="onClick" />
 
@@ -253,6 +262,5 @@
         ads:adSize="SMART_BANNER"
         ads:adUnitId="INSERT_YOUR_AD_UNIT_ID_HERE"
       />
-    
     
 </RelativeLayout>
