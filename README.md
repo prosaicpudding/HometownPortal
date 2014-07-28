@@ -4,6 +4,7 @@ HometownPortal
 #### To Do:
 
 * Need to add a refresh action to the action bar and remove the "refresh" buttons in several of the views.
+* Weather view is not working properly.
 
 #### Completed:
 
