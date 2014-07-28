@@ -1,12 +1,9 @@
 HometownPortal
 ==============
 
-#### Current:
+#### To Do:
 
-* Reworking the GUI so that it looks like a modern application - Alex
-  * On the landing view, need to make clicking on the navigation rows act like clicking on the navigation icons
-  * Need to add a refresh action to the action bar and remove the "refresh" buttons in several of the views.
-  * Need to finish the image switcher so that the banner cycles through the banner?.png images
+* Need to add a refresh action to the action bar and remove the "refresh" buttons in several of the views.
 
 #### Completed:
 
@@ -20,6 +17,10 @@ HometownPortal
   to leave it for the time being). -Helen
 * Added a weather tab - Maria
 * Fixed the news reader - Alex
+* Reworked the GUI so that it looks like a modern application - Alex
+* Made a new set of graphics for the app. It includes icons and splash images. - Alex
+* Made main activity appear different depending on the current rotation position. - Alex
+* Made splash activity appear different depending on the current rotation position. - Alex
 
 
 **Add features to the readme as you begin working on them, to avoid overlaps.**
