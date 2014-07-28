@@ -9,26 +9,34 @@
     android:orientation="vertical"
     tools:context=".MainActivity" >
 
-	<RelativeLayout
-	    android:orientation="vertical"
-	    android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="wrap_content"
         android:layout_height="300dp"
-	    >
-    	<ImageView
-        	android:id="@+id/imageView1"
-        	android:layout_width="wrap_content"
-        	android:layout_height="match_parent"
-        	android:scaleType="matrix"
-        	android:src="@drawable/banner1" />
-    	
-    	<!-- https://developers.google.com/mobile-ads-sdk/docs/admob/fundamentals -->
-   	    <com.google.android.gms.ads.AdView
-        	android:id="@+id/adView"
-        	android:layout_width="match_parent"
-        	android:layout_height="wrap_content"
-        	ads:adSize="SMART_BANNER"
-        	ads:adUnitId="INSERT_YOUR_AD_UNIT_ID_HERE" >
-    	</com.google.android.gms.ads.AdView>
+        android:orientation="vertical" >
+
+        <!-- https://developers.google.com/mobile-ads-sdk/docs/admob/fundamentals -->
+
+        <ImageSwitcher
+            android:id="@+id/imageSwitcher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/adView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true" >
+
+        </ImageSwitcher>
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            ads:adSize="SMART_BANNER"
+            ads:adUnitId="INSERT_YOUR_AD_UNIT_ID_HERE" >
+
+        </com.google.android.gms.ads.AdView>
+
     </RelativeLayout>
 
     <ScrollView

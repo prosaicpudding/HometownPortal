@@ -18,7 +18,13 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageSwitcher;
+import android.widget.ImageView;
 import android.widget.Toast;
+import android.widget.FrameLayout.LayoutParams;
+import android.widget.ViewSwitcher.ViewFactory;
 
 /*
  * Main Activity
@@ -37,15 +43,31 @@ public class MainActivity extends Activity {
     private String foodTitle, entertainmentTitle, shoppingTitle, schoolsTitle, transportationTitle;
     AdView adView;
     
+    //
+    // ImageSwitcher help from:
+    //
+    // http://www.learn-android-easily.com/2013/06/android-imageswitcher.html
+    // http://android-er.blogspot.com/2012/02/animate-fade-infade-out-by-changing.html
+    //
+    private int						image_stack_index	= 0;
+    private ImageSwitcher	image_switcher;
+    private Thread				image_swap_thread;
+    private int						image_stack[]	= {
+    		R.drawable.banner1,
+    		R.drawable.banner2,
+    		R.drawable.banner3,
+    		R.drawable.banner4,
+    		R.drawable.banner5,
+    		R.drawable.banner6 };
+
+  	
+  	
+    
     @Override
     protected void onCreate( Bundle savedInstanceState ) {
 
         super.onCreate( savedInstanceState );
-
-        // Use custom title bar
-
         setContentView( R.layout.activity_main );
-
         
         // Get titles
         this.foodTitle = getString( R.string.food_text );
@@ -89,6 +111,58 @@ public class MainActivity extends Activity {
         //this can easily be registered for (from google) and added
         adView.loadAd(adRequest);
         //***
+        
+        
+        image_switcher = (ImageSwitcher)findViewById(R.id.imageSwitcher);
+        image_switcher.setFactory(new ViewFactory()
+        {
+        	public View makeView()
+        	{
+        		// Create a new ImageView set it's properties
+        		ImageView imageView = new ImageView(getApplicationContext());
+        		imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        		imageView.setLayoutParams(new ImageSwitcher.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT));
+        		return imageView;
+        	}
+        });
+
+        // Declare the animations and initialize them
+        Animation in = AnimationUtils.loadAnimation(this, R.anim.fadein);
+        Animation out = AnimationUtils.loadAnimation(this, R.anim.fadeout);
+
+        // set the animation type to imageSwitcher
+        image_switcher.setInAnimation(in);
+        image_switcher.setOutAnimation(out);
+
+        image_swap_thread = new Thread()
+        {
+        	@Override
+        	public void run()
+        	{
+        		try
+        		{
+        			while (true)
+        			{
+        				sleep(4000);
+        				runOnUiThread(new Runnable()
+        				{
+        					@Override
+        					public void run()
+        					{
+        						next_image();
+        					}
+        				});
+        			}
+        		}
+        		catch (InterruptedException e)
+        		{
+        			// do nothing
+        		}
+        	}
+        };
+
+        next_image(); // load the first image
+        image_swap_thread.start();
     }
 
     /*
@@ -184,6 +258,14 @@ public class MainActivity extends Activity {
         
         startActivity( intent );
     }
+    
+    private void next_image()
+    {
+    	image_stack_index++;
+    	image_stack_index %= image_stack.length;
+    	image_switcher.setImageResource(image_stack[image_stack_index]);
+    }
+    
     
   //***
     //---https://developers.google.com/mobile-ads-sdk/docs/admob/fundamentals
